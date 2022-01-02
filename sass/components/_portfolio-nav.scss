@@ -1,0 +1,19 @@
+.btn-list {
+  @include flexjc-center;
+  margin-bottom: 50px;
+  
+}
+.btn-list__item {
+&:not(:last-child) {
+  margin-right: 8px;
+}
+}
+.btn-list__btn {
+  padding: 6px 22px;
+  border: transparent;
+  border-radius: 4px;
+  font-family: inherit;
+  @include font(16px, 1.62, 0.03em, 500);
+  text-align: center;
+  color: var(--text-color);
+}

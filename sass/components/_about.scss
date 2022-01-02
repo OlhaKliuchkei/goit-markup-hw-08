@@ -1,0 +1,27 @@
+.about-list {
+  @include flexjc-center;
+}
+.about-list__item {
+  width: 270px;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.about-list__box {
+  @include flexjc-center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.about-list__title {
+  @include font(14px, 1.14, 0.03em, 700);
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.about-list__text {
+  @include font(14px, 1.71, 0.03em, 400);
+}
