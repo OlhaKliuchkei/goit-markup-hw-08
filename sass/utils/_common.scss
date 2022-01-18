@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   display: block;
   font-family: "Roboto", sans-serif;
@@ -6,6 +12,7 @@ body {
   // overflow-x: hidden;
   margin: 0px;
 }
+
 h1,
 h2,
 h3,
@@ -13,18 +20,20 @@ p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 img {
   display: block;
   width: 100%;
   height: auto;
 }
+
 ul {
   list-style: none;
   padding: 0;
-  // margin-top: 0px;
-  // margin-bottom: 0px;
-  margin: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
+
 .link {
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -35,16 +44,17 @@ ul {
     cursor: pointer;
   }
 }
+
 section {
-  display: block;
+  // display: block;
   padding: 60px 0;
   width: 100%;
-  margin: 0;
 
   @media screen and (min-width: 1200px) {
     padding: 94px 0;
   }
 }
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;

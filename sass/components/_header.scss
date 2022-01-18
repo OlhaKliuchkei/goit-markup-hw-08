@@ -4,17 +4,48 @@
 .container__header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
 }
 .logo {
   font-family: Raleway;
-  @include font(26px, 1.2, 0.03em, 700);
+  @include font(24px, 28px, 0.03em, 700);
   color: var(--logo-black-color);
   text-decoration: none;
-  margin-right: 93px;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font(26px, 1.2, 0.03em, 700);
+    margin-right: 93px;
+  }
 }
 .logo-color {
   color: var(--accent-color);
 }
+
+.nav-btn {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.nav-btn .icon-cross {
+  display: none;
+}
+
+.nav-btn.is-open .icon-cross {
+  display: block;
+}
+
+.nav-btn.is-open .icon-menu {
+  display: none;
+}
+
 .nav-list {
   display: flex;
   padding-left: 0px;
