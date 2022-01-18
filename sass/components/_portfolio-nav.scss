@@ -1,13 +1,26 @@
 .btn-list {
   @include flexjc-center;
-  margin-bottom: 50px;
-  
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+  }
 }
+
 .btn-list__item {
-&:not(:last-child) {
-  margin-right: 8px;
+  &:not(:last-child) {
+    margin-right: 8px;
+    margin-bottom: 15px;
+  }
 }
-}
+
 .btn-list__btn {
   padding: 6px 22px;
   border: transparent;

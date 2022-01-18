@@ -1,5 +1,13 @@
 .section--no-padding-top {
-  padding-top: 0;
+  @media screen and (max-width: 1999px) {
+    display: none;
+  }
+  @media screen and (min-width: 1200px) {
+    display: contents;
+    display: block;
+    padding-bottom: 94px;
+    padding-top: 0px;
+  }
 }
 .section__title {
   font-family: inherit;

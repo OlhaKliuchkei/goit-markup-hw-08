@@ -1,30 +1,87 @@
 .hero {
-  @include flexjc-center;
-  align-items: center;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0px;
+  margin: 0 auto;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/heroimg.jpg");
+    url("../images/header-mobile-1x.jpg");
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: center;
   background-size: cover;
   background-color: var(--background-herofoot-color);
-  height: 600px;
   max-width: 1600px;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/header-mobile-2x.jpg");
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/header-tablet-1x.jpg");
+    @media screen and (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/header-tablet-2x.jpg");
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1600px;
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/heroimg.jpg");
+    @media screen and (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/header-desktop-2x.jpg");
+    }
+  }
 }
+.hero_active {
+  @include flexjc-center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  @media screen and (min-width: 1200px) {
+    height: 600px;
+  }
+}
+
 .hero__title {
   display: inline-block;
   margin-top: 0px;
   margin-bottom: 30px;
-  width: 696px;
-  @include font(44px, 1.36, 0.06em, 900);
+  max-width: 360px;
+  @include font(26px, 1.6, 0.06em, 900);
   text-transform: uppercase;
   text-align: center;
   color: var(--white-color);
+  @media screen and (min-width: 1200px) {
+    @include font(44px, 1.4, 0.06em, 900);
+    max-width: 696px;
+  }
 }
 .hero__button {
   font-family: inherit;
