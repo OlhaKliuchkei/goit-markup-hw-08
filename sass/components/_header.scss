@@ -4,16 +4,24 @@
 .container__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+
   min-height: 60px;
+  position: relative;
+  @media screen and (max-width: 767px) {
+    justify-content: space-between;
+  }
 }
+
+// &.is-open {
+
 .logo {
   font-family: Raleway;
   @include font(24px, 28px, 0.03em, 700);
   color: var(--logo-black-color);
   text-decoration: none;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
     margin-right: 88px;
   }
 
@@ -21,7 +29,11 @@
     @include font(26px, 1.2, 0.03em, 700);
     margin-right: 93px;
   }
+  // &.is-open {
+  //   color: var(--white-color);
+  // }
 }
+
 .logo-color {
   color: var(--accent-color);
 }
@@ -32,6 +44,15 @@
   padding: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .nav-btn .icon-cross {
@@ -46,60 +67,179 @@
   display: none;
 }
 
+.menu-container {
+  @media screen and (max-width: 767px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    // height: 796px;
+    background-color: var(--white-color);
+    z-index: 10;
+
+    &.is-open {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (min-width: 1200px) {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 .nav-list {
-  display: flex;
-  padding-left: 0px;
+  @media screen and (max-width: 767px) {
+    padding-left: 40px;
+    margin-bottom: 302px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    // margin-left: 88px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-left: 0px;
+    display: flex;
+  }
 }
 .nav-list__item {
-  &:not(:last-child) {
-    margin-right: 50px;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
   }
 }
 .nav-list__link {
   display: block;
-  padding: 32px 0;
-  @include font(14px, 1.14, 0.02em, 500);
+  @include font(40px, 47px, 0.02em, 500);
   color: var(--text-color);
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px 0;
+    @include font(14px, 1.14, 0.02em, 500);
+  }
 }
 .nav-list__link--current {
   color: var(--accent-color);
-  &::after {
-    content: "";
-    width: 100%;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
+  @media screen and (min-width: 768px) {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+    }
   }
 }
+
 .header-contact {
-  margin-left: auto;
   display: flex;
-}
-.header-contact__item {
-  &:not(:last-child) {
-    margin-right: 50px;
+  margin-left: auto;
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+    padding-left: 40px;
+    margin-bottom: 64px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+    margin-left: 84px;
+    margin-bottom: -10px;
   }
 }
+
+.header-contact__item {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+}
+
 .header-contact__link {
   display: flex;
   align-items: center;
-  @include font(14px, 1.14, 0.02em, 500);
+  @include font(24px, 28px, 0.02em, 500);
   color: var(--link-color);
   text-decoration: none;
   &:hover .header-contact__icons,
   &:focus .header-contact__icons {
     color: var(--accent-color);
   }
-}
-.header-contact__icon {
-  fill: var(--link-color);
-  margin-right: 10px;
-  .header-contact__link:hover &,
-  .header-contact__link:focus & {
-    fill: var(--accent-color);
+
+  @media screen and (min-width: 768px) {
+    @include font(12px, 14px, 0.02em, 500);
   }
+  @media screen and (min-width: 768px) {
+    @include font(14px, 1.14, 0.02em, 500);
+  }
+}
+
+.header-contact__link--mobile {
+  @media screen and (max-width: 767px) {
+    @include font(34px, 40px, 0.02em, 500);
+    color: var(--accent-color);
+    margin-bottom: 32px;
+  }
+}
+
+.header-contact__icon {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    fill: var(--link-color);
+    margin-right: 10px;
+    .header-contact__link:hover &,
+    .header-contact__link:focus & {
+      fill: var(--accent-color);
+    }
+  }
+}
+
+.header-socials {
+  display: flex;
+  padding-left: 40px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.header-socials__item {
+  color: var(--accent-color);
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:not(:last-child)::after {
+    content: "\007C";
+    color: var(--link-color);
+    padding-left: 10px;
+  }
+}
+
+.header-socials__link {
+  color: var(--accent-color);
 }

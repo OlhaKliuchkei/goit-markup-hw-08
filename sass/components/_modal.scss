@@ -10,18 +10,35 @@
   &.is-hidden .modal {
     transform: scale(0.25) skew(45deg);
   }
+
+  overflow-y: scroll;
 }
 .modal {
   padding: 40px;
-  width: 528px;
-  min-height: 581px;
+  top: 65%;
+  left: 50%;
+
   background-color: var(--white-color);
   border-radius: 4px;
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: scale(1) skew(0deg) translate(-50%, -50%);
   transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+    min-height: 609px;
+  }
+
+  // @media screen and (min-width: 768px) {
+  //   top: 80%;
+  // }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    min-height: 581px;
+    top: 70%;
+    left: 50%;
+  }
 }
 .is-hidden {
   visibility: hidden;
@@ -53,12 +70,17 @@
 .modal__title {
   font-family: Roboto;
   font-style: normal;
-  @include font(20px, 23px, 0.03em, 700);
+  @include font(20px, 30px, 0.03em, 700);
   text-align: center;
   color: var(--text-color);
   margin-bottom: 12px;
+
+  @media screen and (min-width: 1200px) {
+    @include font(20px, 23px, 0.03em, 700);
+  }
 }
 .modal-form__wrap {
+  position: relative;
   &:not(:nth-child(4n)) {
     margin-bottom: 10px;
   }
@@ -67,8 +89,12 @@
   display: block;
   font-family: Roboto;
   font-style: normal;
-  @include font(12px, 14px, 0.03em, 400);
+  @include font(12px, 14px, 0.01em, 400);
   margin-bottom: 4px;
+
+  @media screen and (min-width: 1200px) {
+    @include font(12px, 14px, 0.03em, 400);
+  }
 }
 .modal-form__box {
   position: relative;
@@ -82,21 +108,24 @@
   padding-right: 42px;
   padding-left: 42px;
   outline: none;
+  cursor: pointer;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:focus {
     border-color: var(--accent-color);
   }
 }
+.modal-form__input:focus + .modal-form__icon {
+  fill: var(--accent-color);
+}
+
 .modal-form__icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 12px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  .modal-form__input:focus & {
-    fill: var(--accent-color);
-  }
 }
+
 .modal-form__textarea {
   display: block;
   width: 100%;
@@ -132,8 +161,14 @@
   @include flexjc-center;
   align-items: center;
   font-family: Roboto;
-  @include font(14px, 24px, 0.03em, 400);
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
   color: var(--link-color);
+
+  @media screen and (min-width: 1200px) {
+    @include font(14px, 24px, 0.03em, 400);
+  }
 
   span {
     width: 16px;
@@ -150,7 +185,7 @@
   fill: var(--white-color);
 }
 .modal-terms__link {
-  display: inline-block;
+  // display: inline-block;
   color: var(--accent-color);
   text-decoration: underline;
 }
