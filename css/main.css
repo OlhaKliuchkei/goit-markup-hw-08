@@ -23,6 +23,10 @@ body {
   margin: 0px;
 }
 
+.is-scroll {
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -62,6 +66,27 @@ section {
 @media screen and (min-width: 1200px) {
   section {
     padding: 94px 0;
+  }
+}
+
+.section__title {
+  font-family: inherit;
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section__title {
+    font-size: 36px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    margin-bottom: 50px;
   }
 }
 
@@ -124,6 +149,7 @@ section {
 
 .header {
   border-bottom: 1px solid #ececec;
+  position: relative;
 }
 
 .container__header {
@@ -131,7 +157,6 @@ section {
   align-items: center;
   justify-content: flex-end;
   min-height: 60px;
-  position: relative;
 }
 
 @media screen and (max-width: 767px) {
@@ -168,6 +193,10 @@ section {
 
 .logo-color {
   color: var(--accent-color);
+}
+
+.logo-hide {
+  color: transparent;
 }
 
 .nav-btn {
@@ -210,6 +239,7 @@ section {
     width: 100%;
     background-color: var(--white-color);
     z-index: 10;
+    overflow-y: skroll;
   }
   .menu-container.is-open {
     display: block;
@@ -228,6 +258,10 @@ section {
     justify-content: space-between;
     width: 100%;
   }
+}
+
+.menu-container.is-open + .logo {
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -314,7 +348,7 @@ section {
   .header-contact {
     flex-direction: column-reverse;
     padding-left: 40px;
-    margin-bottom: 64px;
+    margin-bottom: 30px;
   }
 }
 
@@ -402,6 +436,7 @@ section {
 .header-socials {
   display: flex;
   padding-left: 40px;
+  padding-bottom: 48px;
 }
 
 @media screen and (min-width: 768px) {
@@ -605,17 +640,6 @@ section {
     padding-bottom: 94px;
     padding-top: 0px;
   }
-}
-
-.section__title {
-  font-family: inherit;
-  font-size: 36px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  font-weight: 700;
-  color: var(--text-color);
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 .projects-list {
@@ -1141,7 +1165,7 @@ section {
 
 .modal {
   padding: 40px;
-  top: 65%;
+  top: 50%;
   left: 50%;
   background-color: var(--white-color);
   border-radius: 4px;
@@ -1161,8 +1185,6 @@ section {
   .modal {
     width: 528px;
     min-height: 581px;
-    top: 70%;
-    left: 50%;
   }
 }
 
@@ -1381,7 +1403,6 @@ section {
 
 @media screen and (min-width: 768px) {
   .btn-list {
-    margin-bottom: 40px;
     justify-content: center;
   }
 }
@@ -1487,6 +1508,7 @@ section {
 @media screen and (min-width: 768px) {
   .examples-item__imgtext {
     padding: 49px 24px;
+    overflow: hidden;
   }
 }
 

@@ -15,7 +15,7 @@
 }
 .modal {
   padding: 40px;
-  top: 65%;
+  top: 50%;
   left: 50%;
 
   background-color: var(--white-color);
@@ -29,15 +29,9 @@
     min-height: 609px;
   }
 
-  // @media screen and (min-width: 768px) {
-  //   top: 80%;
-  // }
-
   @media screen and (min-width: 1200px) {
     width: 528px;
     min-height: 581px;
-    top: 70%;
-    left: 50%;
   }
 }
 .is-hidden {
