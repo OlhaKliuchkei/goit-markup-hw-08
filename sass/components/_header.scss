@@ -79,7 +79,10 @@
     z-index: 10;
     overflow-y: skroll;
     &.is-open {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
     }
   }
   @media screen and (min-width: 768px) {
@@ -99,7 +102,7 @@
 .nav-list {
   @media screen and (max-width: 767px) {
     padding-left: 40px;
-    margin-bottom: 302px;
+    // margin-bottom: 302px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -226,7 +229,7 @@
 .header-socials {
   display: flex;
   padding-left: 40px;
-  padding-bottom: 48px;
+  padding-bottom: 75px;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -235,13 +238,16 @@
 
 .header-socials__item {
   color: var(--accent-color);
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
   &:not(:last-child)::after {
     content: "\007C";
     color: var(--link-color);
     padding-left: 10px;
+  }
+
+  @media screen and (min-width: 480px) {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 }
 
